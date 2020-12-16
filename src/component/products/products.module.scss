@@ -1,0 +1,131 @@
+$breakpoint-tablet: 1024px;
+$breakpoint-mobile: 640px;
+
+.header {
+    margin: 40px auto 0;
+    display: flex;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.display_mode {
+    // margin: 40px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+
+    .twoColumn,
+    .threeColumn,
+    .fourColumn{
+        margin-right: 10px;
+        border: solid 1px #8e8e8e;
+        height: 20px;
+        padding: 2px;
+        cursor: pointer;
+
+        &.active span {
+            background: #333;
+        }
+        span {
+            display: inline-block;
+            width: 10px;
+            height: 100%;
+            margin-right: 3px;
+            background: #8e8e8e;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+    .twoColumn{}
+    .threeColumn{
+        @media screen and (max-width: $breakpoint-mobile) {
+            display: none;
+        }
+    }
+    .fourColumn{
+        @media screen and (max-width: $breakpoint-tablet) {
+            display: none;
+        }
+    }
+    
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+    
+    &.threeColumn li{
+        @media screen and (min-width: $breakpoint-tablet) {
+            width: 30%;
+        }
+    }
+
+    &.twoColumn li{
+        width: 45%;
+    }
+
+    &.fourColumn li{
+        @media screen and (min-width: $breakpoint-tablet) {
+            width: 24%;
+        }
+    }
+
+    li {
+        width: 24%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: column;
+        padding: 0;
+        margin-bottom: 1%;
+        background: #f5f5f5;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            width: 30%;
+        }
+
+        @media screen and (max-width: $breakpoint-mobile) {
+            width: 45%;
+        }
+
+        &:hover .image img{
+            transform: scale(1.2);
+
+            &.broken {
+                transform: none;
+            }
+        }
+
+        .image {
+            width: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        .content {
+            background: #fff;
+            width: 100%;
+        }
+        .title {
+            font-weight: 500;
+        }
+        .price {
+        
+        }
+
+        img { 
+            width: 100%;
+            transition: all .4s ease-in-out;
+
+            &.broken {
+                width: 20%;
+                padding: 50% 0;
+                transition: none;
+            }
+        }
+    }
+}

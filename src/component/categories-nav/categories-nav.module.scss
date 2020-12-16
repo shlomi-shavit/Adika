@@ -1,0 +1,101 @@
+$breakpoint-tablet: 1024px;
+
+.categories {
+
+    &_btn {
+        display: none;
+        background: none;
+        border: none;
+        outline: none;
+        height: 45px;
+        margin: auto;
+        align-items: center;
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        
+        &:hover {
+            color: #56cfe1;
+            .arrow {
+                border-left: solid 2px #56cfe1;
+                 border-bottom: solid 2px #56cfe1;
+            }
+        }
+        @media screen and (max-width: $breakpoint-tablet) {
+            display: flex;
+            font-size: 16px;
+        }
+
+        .arrow {
+            width: 5px;
+            height: 5px;
+            border-left: solid 2px #adadad;
+            border-bottom: solid 2px #adadad;
+            transition: all .2s ease-in-out;
+            margin-left: 10px;
+            margin-top: 0;
+            transform: rotate(-45deg);
+
+            .active & {
+                transform: rotate(135deg);
+                margin-top: 6px;
+            }
+        }
+    }
+
+    &_links {
+        
+        border: 1px solid #dedede;;
+        display: flex;
+        justify-content: center;
+        min-height: 45px;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width: $breakpoint-tablet) {
+                max-height: 0;
+                transition: max-height 0.15s ease-out;
+                overflow: hidden;
+                flex-direction: column;
+            }
+        }
+
+        &.active {
+            nav {
+                @media screen and (max-width: $breakpoint-tablet) {
+                    max-height: 500px;
+                    transition: max-height 0.25s ease-in;
+                } 
+            }
+        }
+    }
+
+    &_image{
+        background-image: url("../../images/categoryImage.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        color: #fff;
+        max-height: 150px;
+
+        &:before {
+            content: "";
+            background: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+    }
+
+    &_content {
+        padding: 50px 0;
+        text-align: center;
+        position: relative;
+    }
+}

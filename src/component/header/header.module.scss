@@ -1,0 +1,21 @@
+$breakpoint-tablet: 1024px;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+
+    .logo {
+        width: 95px;
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            order: 1;
+        }
+
+        img {
+            width: 100%
+        };
+    }
+}

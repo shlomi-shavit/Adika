@@ -1,0 +1,36 @@
+$breakpoint-tablet: 1024px;
+
+.side_menu {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    
+    @media screen and (max-width: $breakpoint-tablet) {
+        order: 2;
+    }
+
+    li{
+        padding: 0;
+        margin-left: 10px;
+    }
+
+    .svg {
+        &:empty{
+            border: solid 1px #333;
+        }
+        width: 20px;
+        height: 20px;
+        
+        &.mobileHide {
+            @media screen and (max-width: $breakpoint-tablet) {
+                display: none;
+            }
+        }
+    }
+    span {
+        display: none;
+        @media screen and (max-width: $breakpoint-tablet) {
+            // display: block;
+        }
+    }
+}

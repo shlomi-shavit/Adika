@@ -1,0 +1,89 @@
+$breakpoint-tablet: 1024px;
+$close_btn_width: 50px;
+$menu_width: 340px;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+        order: 0;
+    }
+
+    .btn {
+        display: none;
+        @media screen and (max-width: $breakpoint-tablet) {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .close_btn {
+        display: none;
+        @media screen and (max-width: $breakpoint-tablet) {
+            display: flex;
+            position: absolute;
+            top: 0;
+            background: #383838;
+            color: #fff;
+            font-size: 24px;
+            right: -$close_btn_width;
+            width: $close_btn_width;
+            height: $close_btn_width;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    
+    .links {
+        width: 500px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        font-size: 14px;
+
+        a {
+            @media screen and (max-width: $breakpoint-tablet) {
+                border: 1px solid #dedede;
+                border-right: 0;
+                width: 100%;
+                padding: 15px 0;
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: $breakpoint-tablet) {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            height: 100vh;
+            width: $menu_width;
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all .4s ease-in-out;
+            transform: translate3d(- ($menu_width + $close_btn_width),0,0);
+            opacity: 0;
+
+            :global([class*='active']) & {
+                transform: translate3d(0%,0,0);
+                opacity: 1;
+            }
+        }
+    }
+
+    .background {
+        transition: all .4s ease-in-out;
+        opacity: 0;
+
+        :global([class*='active']) & {
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            opacity: 1;
+        }
+    }

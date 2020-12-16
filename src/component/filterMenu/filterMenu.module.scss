@@ -1,0 +1,61 @@
+.dashboard{
+    width: 100%;
+    max-height: 0;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    margin: 20px;
+    display: flex;
+    
+    :global([class*='active']) & {
+        max-height: 500px;
+        transition: max-height .3s ease-in;
+        box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        border: 1px solid #dedede;
+        
+    }
+
+    .filter_wraper {
+        padding: 30px 0 30px 30px;
+    }
+
+    ul {
+        margin: 0;
+        max-height: 200px;
+        min-width: 120px;
+        overflow-y: scroll;
+    }
+
+    li {
+        display: flex;
+        padding: 0;
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+    }
+
+    span {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 0 10px 5px 0;
+
+        &:global([class*='black']) { background-color: black; }   
+        &:global([class*='green']) { background-color: green; }   
+        &:global([class*='red']) { background-color: red; }   
+        &:global([class*='brown']) { background-color: brown; }   
+        &:global([class*='pink']) { background-color: pink; }   
+        &:global([class*='white']) { background-color: white; border: solid 1px #eaeaea; box-sizing: border-box; }   
+        &:global([class*='begie']) { background-color: #F5F5DC; }
+        &:global([class*='red']) { background-color: white-cream; }
+        &:global([class*='yellow']) { background-color: yellow; }
+        &:global([class*='orange']) { background-color: orange; }
+        &:global([class*='cyan']) { background-color: cyan; }
+        &:global([class*='pink']) { background-color: pink; }
+        &:global([class*='silver']) { background-color: silver; }
+        &:global([class*='blue']) { background-color: blue; }
+    }
+}
