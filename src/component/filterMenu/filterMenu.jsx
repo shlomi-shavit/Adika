@@ -45,7 +45,7 @@ const FilterMenu = (props) => {
     </div>
 
     const filterHandler = () => {
-
+        console.log('/Todo')
     }
 
     return (
